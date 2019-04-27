@@ -13,7 +13,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', 
+    '.js', 
+    '.jsx', 
+    '.ts', 
+    '.tsx',
+  ]
   },
   output: {
     path: path.join(__dirname, '/dist'),
@@ -25,6 +30,8 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    port: 5000,
     hot: true
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 }
