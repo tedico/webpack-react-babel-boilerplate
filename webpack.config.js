@@ -2,36 +2,29 @@ const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   module: {
     rules: [
       {
-        test:/\.(js|.jsx)$/,
-        exclude:/node_modules/,
-        use:['babel-loader']
+        test: /\.(js|.jsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
       }
     ]
   },
   resolve: {
-    extensions: ['*', 
-    '.js', 
-    '.jsx', 
-    '.ts', 
-    '.tsx',
-  ]
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"]
   },
   output: {
-    path: path.join(__dirname, '/dist'),
-    publicPath: '/',
-    filename: 'bundle.js',
+    path: path.join(__dirname, "/dist"),
+    publicPath: "/",
+    filename: "bundle.js"
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    contentBase: './dist',
+    contentBase: "./dist",
     port: 5000,
     hot: true
   },
-  devtool: 'cheap-module-eval-source-map'
-}
+  devtool: "cheap-module-eval-source-map"
+};
